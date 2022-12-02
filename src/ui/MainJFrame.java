@@ -26,17 +26,79 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSplitPane = new javax.swing.JSplitPane();
+        controlArea = new javax.swing.JPanel();
+        btnWarehouse = new javax.swing.JButton();
+        btnVoluntary = new javax.swing.JButton();
+        btnTransport = new javax.swing.JButton();
+        btnGovernment = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        workArea = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        controlArea.setMaximumSize(new java.awt.Dimension(32767, 40000));
+
+        btnWarehouse.setText("Warehouse");
+
+        btnVoluntary.setText("Voluntary");
+
+        btnTransport.setText("Transport");
+
+        btnGovernment.setText("Government");
+
+        btnLogout.setText("LOGOUT");
+
+        javax.swing.GroupLayout controlAreaLayout = new javax.swing.GroupLayout(controlArea);
+        controlArea.setLayout(controlAreaLayout);
+        controlAreaLayout.setHorizontalGroup(
+            controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnWarehouse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnVoluntary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTransport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnGovernment, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        controlAreaLayout.setVerticalGroup(
+            controlAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(controlAreaLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(btnWarehouse)
+                .addGap(18, 18, 18)
+                .addComponent(btnVoluntary)
+                .addGap(18, 18, 18)
+                .addComponent(btnTransport)
+                .addGap(18, 18, 18)
+                .addComponent(btnGovernment)
+                .addGap(18, 18, 18)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(487, Short.MAX_VALUE))
+        );
+
+        jSplitPane.setLeftComponent(controlArea);
+
+        javax.swing.GroupLayout workAreaLayout = new javax.swing.GroupLayout(workArea);
+        workArea.setLayout(workAreaLayout);
+        workAreaLayout.setHorizontalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 895, Short.MAX_VALUE)
+        );
+        workAreaLayout.setVerticalGroup(
+            workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+
+        jSplitPane.setRightComponent(workArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jSplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +140,13 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGovernment;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnTransport;
+    private javax.swing.JButton btnVoluntary;
+    private javax.swing.JButton btnWarehouse;
+    private javax.swing.JPanel controlArea;
+    private javax.swing.JSplitPane jSplitPane;
+    private javax.swing.JPanel workArea;
     // End of variables declaration//GEN-END:variables
 }
