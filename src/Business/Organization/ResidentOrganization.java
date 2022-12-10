@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class ResidentOrganization extends Organization {
 

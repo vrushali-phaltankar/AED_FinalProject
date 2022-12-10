@@ -11,7 +11,7 @@ import Business.FoodProvider.FoodDirectory;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class ResidentEmployee extends Employee{
     

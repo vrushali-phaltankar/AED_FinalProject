@@ -9,7 +9,7 @@ import Business.Community.Community;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public abstract class Employee {
     

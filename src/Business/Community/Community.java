@@ -15,7 +15,7 @@ import Business.Organization.RestaurantOrganization;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class Community {
     

@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class FoodDistributionAdminRole extends Role {
 

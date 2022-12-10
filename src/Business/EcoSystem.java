@@ -5,7 +5,7 @@
  */
 package Business;
 
-import Business.Network.Network;
+import Business.City.City;
 import Business.Organization.Organization;
 import Business.Roles.Role;
 import Business.Roles.SystemAdminRole;
@@ -13,19 +13,19 @@ import java.util.ArrayList;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class EcoSystem extends Organization {
     
     private static EcoSystem business;
-    private ArrayList<Network> networkList;
+    private ArrayList<City> cityList;
     
     
     
     private EcoSystem(){
         
         super("SystemAdmin");
-        networkList = new ArrayList<Network>();
+        cityList = new ArrayList<City>();
         
     }
     
@@ -44,13 +44,13 @@ public class EcoSystem extends Organization {
         return roleList;
     }
 
-    public ArrayList<Network> getNetworkList() {
-        return networkList;
+    public ArrayList<City> getCitiesList() {
+        return cityList;
     }
-    public Network createAndAddNetwork() {
-        Network network = new Network();
-        networkList.add(network);
-        return network;
+    public City createAndAddCity() {
+        City city = new City();
+        cityList.add(city);
+        return city;
     }
     
     

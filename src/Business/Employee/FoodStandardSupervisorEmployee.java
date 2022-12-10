@@ -9,7 +9,7 @@ import Business.Employee.Employee;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class FoodStandardSupervisorEmployee extends Employee {
 

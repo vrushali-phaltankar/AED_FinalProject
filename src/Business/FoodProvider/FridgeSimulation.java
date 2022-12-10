@@ -13,7 +13,7 @@ import java.util.Random;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class FridgeSimulation {
     

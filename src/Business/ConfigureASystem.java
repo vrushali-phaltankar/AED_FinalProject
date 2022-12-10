@@ -5,6 +5,7 @@
  */
 package Business;
 
+import Business.City.City;
 import Business.Community.Community;
 import Business.Employee.ResidentEmployee;
 import Business.Employee.CommunityAdminEmployee;
@@ -18,7 +19,6 @@ import Business.Employee.RestaurantEmployee;
 import Business.Employee.SystemAdminEmployee;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.FoodManagementEnterprise;
-import Business.Network.Network;
 import Business.Roles.ResidentRole;
 import Business.Roles.CommunityAdminRole;
 import Business.Roles.FoodCollectionDriverRole;
@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class ConfigureASystem {
     
@@ -49,12 +49,12 @@ public class ConfigureASystem {
         // Creating the user account for the systemadmin
         UserAccount ua = system.getUserAccountDirectory().createUserAccount("sa", "sa", emp, new SystemAdminRole());
           
-        Network n = new Network();
+        City n = new City();
         n.setName("Boston");
-        system.getNetworkList().add(n);
+        system.getCitiesList().add(n);
         
         //Create enterprise
-        FoodManagementEnterprise fdm = (FoodManagementEnterprise) system.getNetworkList().get(0).getEnterpriseDirectory().createAndAddEnterprise("ABC Food ENterprise", Enterprise.EnterpriseType.FoodManagement);
+        FoodManagementEnterprise fdm = (FoodManagementEnterprise) system.getCitiesList().get(0).getEnterpriseDirectory().createAndAddEnterprise("ABC Food ENterprise", Enterprise.EnterpriseType.FoodManagement);
         Employee e = fdm.getEmployeeDirectory().createEmployee("ABCFoodAdmin 1",null,new FoodEnterpriseAdminEmployee());
         fdm.getUserAccountDirectory().createUserAccount("f1", "f1", e, new FoodEnterpriseAdminRole());
         

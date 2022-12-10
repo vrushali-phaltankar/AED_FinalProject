@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author kunal
  */
 public class FoodCollectionOrganization extends Organization{
  
