@@ -5,7 +5,6 @@
  */
 package Business.WorkQueue;
 
-import Business.Employee.NGOEmployee;
 import Business.Employee.ResidentEmployee;
 import Business.Employee.RestaurantEmployee;
 import Business.FoodProvider.Food;
@@ -19,7 +18,6 @@ public class FoodCollectionWorkRequest extends WorkRequest {
     private Food food;
     private ResidentEmployee residentEmployee;
     private RestaurantEmployee restaurantEmployee;
-    private NGOEmployee ngoEmployee;
     private String  driverName;
     
     public Food getFood() {
@@ -58,14 +56,6 @@ public class FoodCollectionWorkRequest extends WorkRequest {
 
     public void setRestaurantEmployee(RestaurantEmployee restaurantEmployee) {
         this.restaurantEmployee = restaurantEmployee;
-    }
-
-    public NGOEmployee getNGOEmployee() {
-        return ngoEmployee;
-    }
-
-    public void setNGOEmployee(NGOEmployee ngoEmployee) {
-        this.ngoEmployee = ngoEmployee;
     }
 
     
