@@ -51,7 +51,7 @@ public class RestaurantEmployee extends Employee {
         this.currentRewardPoints = currentRewardPoints;
     }
     
-     public int calculateTotalRewardPointsForResident(){
+     public int calculateTotalRewardPointsForCitizen(){
         
         int rewardPoints = 0;
         
