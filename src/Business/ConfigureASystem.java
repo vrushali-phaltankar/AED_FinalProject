@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author kunal
+ * @author vrushaliphaltankar
  */
 public class ConfigureASystem {
     
@@ -45,7 +45,7 @@ public class ConfigureASystem {
         EcoSystem system = EcoSystem.getInstance();
      
         // Creating the systemadmin for the first time login
-        Employee emp = system.getEmployeeDirectory().createEmployee("Kunal Deora",null,new SystemAdminEmployee());
+        Employee emp = system.getEmployeeDirectory().createEmployee("Vrushali Phaltankar",null,new SystemAdminEmployee());
         // Creating the user account for the systemadmin
         UserAccount ua = system.getUserAccountDirectory().createUserAccount("sa", "sa", emp, new SystemAdminRole());
           
@@ -71,12 +71,12 @@ public class ConfigureASystem {
         Employee fcd = fenway.getFoodCollectionOrganization().getEmployeeDirectory().createEmployee("fcd",fenway, new FoodCollectionDriverEmployee());
         Employee fds =  fenway.getFoodDistributionOrganization().getEmployeeDirectory().createEmployee("fds",fenway, new FoodDistributionSupervisorEmployee());
         Employee fss =  fenway.getFoodStandardOrganization().getEmployeeDirectory().createEmployee("fss",fenway, new FoodStandardSupervisorEmployee());
-        Employee citizen1 = fenway.getCitizenOrganization().getEmployeeDirectory().createEmployee("manasi", fenway, new ResidentEmployee());
+        Employee citizen1 = fenway.getCitizenOrganization().getEmployeeDirectory().createEmployee("gauri", fenway, new ResidentEmployee());
         citizen1.setAddress("125 Park Drive, Boston, MA 02115");
-        citizen1.setEmailID("manasi.laddha@gmail.com");        
+        citizen1.setEmailID("gauripatil@gmail.com");        
         Employee restaurant1 = fenway.getRestaurantOrganization().getEmployeeDirectory().createEmployee("mumbai spice", fenway, new RestaurantEmployee());
         restaurant1.setAddress("251 Massachusetts Ave, Boston, MA 02115");
-        restaurant1.setEmailID("kunal.deora@gmail.com");
+        restaurant1.setEmailID("phaltankarvrushali@gmail.com");
 
         // Allocating current address to the driver in the starting.
         ((FoodCollectionDriverEmployee) fcd).setDriverCurrentAddress("44 Germain St, Boston, MA 02115");
@@ -87,7 +87,7 @@ public class ConfigureASystem {
         fenway.getFoodCollectionOrganization().getUserAccountDirectory().createUserAccount("fcd", "fcd", fcd, new FoodCollectionDriverRole());
         fenway.getFoodDistributionOrganization().getUserAccountDirectory().createUserAccount("fds", "fds", fds, new FoodDistributionAdminRole());
         fenway.getFoodStandardOrganization().getUserAccountDirectory().createUserAccount("fss", "fss", fss, new FoodStandardAdminRole());
-        fenway.getCitizenOrganization().getUserAccountDirectory().createUserAccount("manasi", "manasi", citizen1, new ResidentRole());
+        fenway.getCitizenOrganization().getUserAccountDirectory().createUserAccount("gauri", "gauri", citizen1, new ResidentRole());
         fenway.getRestaurantOrganization().getUserAccountDirectory().createUserAccount("spice", "spice", restaurant1, new RestuarantRole());
      
         FridgeSimulation simulator = new FridgeSimulation();

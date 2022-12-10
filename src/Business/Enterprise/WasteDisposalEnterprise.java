@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author kunal
+ * @author vrushaliphaltankar
  */
 public class WasteDisposalEnterprise extends Enterprise{
     

@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author kunal
+ * @author vrushaliphaltankar
  */
 public class ResidentRole extends Role {
 

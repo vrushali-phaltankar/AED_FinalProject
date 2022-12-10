@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author kunal
+ * @author vrushaliphaltankar
  */
 public class CommunityAdminOrganization extends Organization {
 

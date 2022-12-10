@@ -8,7 +8,7 @@ package Business.Employee;
 import Business.FoodProvider.FoodDirectory;
 /**
  *
- * @author kunal
+ * @author vrushaliphaltankar
  */
 public class FoodDistributionSupervisorEmployee extends Employee {
 
