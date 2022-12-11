@@ -14,12 +14,12 @@ import java.util.ArrayList;
  *
  * @author vrushaliphaltankar
  */
-public class FoodManagementEnterprise extends Enterprise {
+public class TransportManagementEnterprise extends Enterprise {
     
     private ArrayList<Community> communityArrayList;
     
-    public FoodManagementEnterprise(String name){
-        super(name,EnterpriseType.FoodManagement);
+    public TransportManagementEnterprise(String name){
+        super(name,EnterpriseType.TransportManagement);
         communityArrayList = new ArrayList<Community>();
         
     }
