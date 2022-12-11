@@ -102,7 +102,7 @@ public class ResidentWorkArea extends javax.swing.JPanel {
            //ResidentEmployee ee = (ResidentEmployee)  userAccount.getEmployee();      
            for(Food food : residentEmployee.getFoodDirectory().getFoodDirectory()){
                status = calculateStatusOfFood(food);
-               if(!status.equalsIgnoreCase("Can be kept") && !status.equalsIgnoreCase("Spoiled")){
+               if(status.equalsIgnoreCase("Can be kept") && !status.equalsIgnoreCase("Spoiled")){
                         Object[] row = new Object[6];
                         row[0] = food;
                         row[1]=  food.getFoodBarCode();

@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author vrushaliphaltankar
+ * @author gauripatil
  */
 public class UpdateEnterprise extends javax.swing.JFrame {
 
