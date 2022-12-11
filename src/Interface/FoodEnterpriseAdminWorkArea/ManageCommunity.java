@@ -10,6 +10,9 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.FoodManagementEnterprise;
 import java.awt.CardLayout;
 import java.awt.Font;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -181,11 +184,42 @@ public class ManageCommunity extends javax.swing.JPanel {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         String name = txtCommunity.getText();
+        
+        if(name.isEmpty() ){
+            
+            JOptionPane.showMessageDialog(null, "Community Name cannot be empty");
+            return;
+        }
+        
+        Pattern p = Pattern.compile("^[a-zA-Z \\s]+");
+        Matcher m = p.matcher(name);  
+        if(!m.matches())
+        {
+            txtCommunity.setText("");
+            JOptionPane.showMessageDialog(null, "Invalid Community Name");
+            
+            return;
+        }
+        
         if (enterprise instanceof FoodManagementEnterprise){
             FoodManagementEnterprise foodManagementEnterprise  =(FoodManagementEnterprise) enterprise;
+            if(null != foodManagementEnterprise.getCommunityArrayList() && !foodManagementEnterprise.getCommunityArrayList().isEmpty())
+            {
+                for(Community community : foodManagementEnterprise.getCommunityArrayList())
+                {
+                    if(name.equalsIgnoreCase(community.getCommunityName()))
+                    {
+                        txtCommunity.setText("");
+                        JOptionPane.showMessageDialog(null, "Community Already exist");
+            
+                        return;
+                    }
+                }
+            }
             foodManagementEnterprise.addCommunity(name);
             populateTable();
         }
+        txtCommunity.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
