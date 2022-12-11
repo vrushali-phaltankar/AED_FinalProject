@@ -10,6 +10,11 @@ import Business.Enterprise.Enterprise;
 import Business.Enterprise.FoodManagementEnterprise;
 import java.awt.CardLayout;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -68,6 +73,7 @@ public class ManageCommunity extends javax.swing.JPanel {
         lblErrCommunity = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         label1.setText("label1");
 
@@ -126,6 +132,14 @@ public class ManageCommunity extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Community");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Delete Community");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -135,7 +149,10 @@ public class ManageCommunity extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(75, 75, 75)
+                                .addComponent(jButton1))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
@@ -151,15 +168,20 @@ public class ManageCommunity extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBack)))
-                .addContainerGap(380, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButton1)))
                 .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -181,11 +203,42 @@ public class ManageCommunity extends javax.swing.JPanel {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         String name = txtCommunity.getText();
+        
+        if(name.isEmpty() ){
+            
+            JOptionPane.showMessageDialog(null, "Community Name cannot be empty");
+            return;
+        }
+        
+        Pattern p = Pattern.compile("^[a-zA-Z \\s]+");
+        Matcher m = p.matcher(name);  
+        if(!m.matches())
+        {
+            txtCommunity.setText("");
+            JOptionPane.showMessageDialog(null, "Invalid Community Name");
+            
+            return;
+        }
+        
         if (enterprise instanceof FoodManagementEnterprise){
             FoodManagementEnterprise foodManagementEnterprise  =(FoodManagementEnterprise) enterprise;
+            if(null != foodManagementEnterprise.getCommunityArrayList() && !foodManagementEnterprise.getCommunityArrayList().isEmpty())
+            {
+                for(Community community : foodManagementEnterprise.getCommunityArrayList())
+                {
+                    if(name.equalsIgnoreCase(community.getCommunityName()))
+                    {
+                        txtCommunity.setText("");
+                        JOptionPane.showMessageDialog(null, "Community Already exist");
+            
+                        return;
+                    }
+                }
+            }
             foodManagementEnterprise.addCommunity(name);
             populateTable();
         }
+        txtCommunity.setText("");
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -195,10 +248,39 @@ public class ManageCommunity extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          int row = tblCommunity.getSelectedRow();
+		if (row < 0)
+		{
+			JOptionPane.showMessageDialog(null, "Please select Community");
+			return;
+		}
+		
+		List<Community> tempCommunity = new ArrayList<>();
+                DefaultTableModel model = (DefaultTableModel) tblCommunity.getModel();
+		String communityname = model.getValueAt(row, 0).toString();
+
+		FoodManagementEnterprise foodManagementEnterprise  =(FoodManagementEnterprise) enterprise;
+                Community tempCommuity = null;
+            if(null != foodManagementEnterprise.getCommunityArrayList() && !foodManagementEnterprise.getCommunityArrayList().isEmpty())
+            {
+                for(Community community : foodManagementEnterprise.getCommunityArrayList())
+                {
+                    if(communityname.equalsIgnoreCase(community.getCommunityName()))
+                    {
+                        tempCommuity = community;
+                    }
+		}
+                foodManagementEnterprise.getCommunityArrayList().remove(tempCommuity);
+		populateTable();
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -18,6 +18,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,7 +32,7 @@ public class FoodAdminWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form FoodAdminWorkArea
      */
-    
+static int foodBarcode = 0;
 private JPanel userProcessContainer;
 private FoodManagementEnterprise enterprise;
 
@@ -48,6 +50,7 @@ private FoodManagementEnterprise enterprise;
         txtExpiryDate.setEnabled(false);
         txtThresholdDays.setEnabled(false);
         rdnResident.setSelected(true);
+        jDateChooser1.setMaxSelectableDate(new Date());
     }
     
     public static int RandInt(int min, int max) {
@@ -151,13 +154,7 @@ private FoodManagementEnterprise enterprise;
           else{
                 txtExpiryDate.setText(new Date().toString());
           }
-          
-        
       }
-      
-      
-        
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -180,7 +177,7 @@ private FoodManagementEnterprise enterprise;
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtFoddName = new javax.swing.JTextField();
+        txtFoodName = new javax.swing.JTextField();
         cboFoodType = new javax.swing.JComboBox();
         spnQuantity = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
@@ -196,7 +193,7 @@ private FoodManagementEnterprise enterprise;
         txtThresholdDays = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("FoodProvider Work Area");
+        jLabel1.setText("Food Admin Work Area");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setText("Community Name");
@@ -317,7 +314,7 @@ private FoodManagementEnterprise enterprise;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtFoddName)
+                            .addComponent(txtFoodName)
                             .addComponent(cboBestBefore, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(64, 64, 64)
@@ -364,7 +361,7 @@ private FoodManagementEnterprise enterprise;
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtFoddName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFoodName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(cboFoodType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
@@ -382,23 +379,38 @@ private FoodManagementEnterprise enterprise;
                             .addComponent(jLabel9)
                             .addComponent(txtExpiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(44, 44, 44)
-                        .addComponent(btnCreateFood, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(40, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btnCreateFood, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateFoodActionPerformed
         // TODO add your handling code here:
     
-        String foodName = txtFoddName.getText();
+        String foodName = txtFoodName.getText();
+        
+        if(null == foodName || foodName.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "Please enter Food Name");
+            txtFoodName.setText("");
+			return;
+        }
+        
+            Pattern p = Pattern.compile("^[a-zA-Z \\s]+");
+            Matcher m = p.matcher(foodName);  
+            if(!m.matches())
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Food Name");
+			return;
+            }
+        
         String foodType=cboFoodType.getSelectedItem().toString();
         Date date = jDateChooser1.getDate();
         int quantity = (int) spnQuantity.getValue();
         if(quantity == 0){
-           quantity=1; 
+           JOptionPane.showMessageDialog(null, "Quantity must not be zero");
+           return;
         }
         
         
@@ -425,6 +437,8 @@ private FoodManagementEnterprise enterprise;
         foodItem.setFoodType(foodType);
         foodItem.setQuantity(quantity);
         foodItem.setFoodName(foodName);
+        foodItem.setFoodBarCode(foodBarcode);
+        ++foodBarcode;
         
         Calendar cc1 = Calendar.getInstance();
         cc1.setTime(date1);
@@ -435,7 +449,7 @@ private FoodManagementEnterprise enterprise;
         if(rdnResident.isSelected()){
             ResidentEmployee residentEmployee = (ResidentEmployee) cboResident.getSelectedItem();
             residentEmployee.getFoodDirectory().addFood(foodItem);
-            txtFoddName.setText("");
+            txtFoodName.setText("");
             
             JOptionPane.showMessageDialog(null, "Food Item created for  "   +   residentEmployee.toString());
             
@@ -444,7 +458,7 @@ private FoodManagementEnterprise enterprise;
           if(rdnRestaurant.isSelected()){
             RestaurantEmployee restaurantEmployee = (RestaurantEmployee) cboRestaurant.getSelectedItem();
             restaurantEmployee.getFoodDirectory().addFood(foodItem);
-            txtFoddName.setText("");
+            txtFoodName.setText("");
             JOptionPane.showMessageDialog(null, "Food Item created for  "   +   restaurantEmployee.toString());
         }       
     }//GEN-LAST:event_btnCreateFoodActionPerformed
@@ -492,9 +506,9 @@ private FoodManagementEnterprise enterprise;
     private javax.swing.JButton btnCreateFood;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cboBestBefore;
-    private javax.swing.JComboBox cboResident;
     private javax.swing.JComboBox cboCommuntiyName;
     private javax.swing.JComboBox cboFoodType;
+    private javax.swing.JComboBox cboResident;
     private javax.swing.JComboBox cboRestaurant;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
@@ -513,7 +527,7 @@ private FoodManagementEnterprise enterprise;
     private javax.swing.JRadioButton rdnRestaurant;
     private javax.swing.JSpinner spnQuantity;
     private javax.swing.JTextField txtExpiryDate;
-    private javax.swing.JTextField txtFoddName;
+    private javax.swing.JTextField txtFoodName;
     private javax.swing.JTextField txtThresholdDays;
     // End of variables declaration//GEN-END:variables
 }

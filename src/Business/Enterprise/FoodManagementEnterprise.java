@@ -44,10 +44,4 @@ public class FoodManagementEnterprise extends Enterprise {
         this.communityArrayList = communityArrayList;
     }
     
-    
-    
-    
-    
-    
-    
 }

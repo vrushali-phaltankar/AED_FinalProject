@@ -5,6 +5,7 @@
  */
 package Interface.CommunityAdminWorkArea;
 
+import Business.City.City;
 import Business.Community.Community;
 import Business.Employee.ResidentEmployee;
 import Business.Employee.FoodCollectionDriverEmployee;
@@ -36,6 +37,8 @@ import javax.swing.table.DefaultTableModel;
 
 ////////// EMAIL IMPORTS
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -164,6 +167,7 @@ public class ManageUserAccount extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         txtEmailID = new javax.swing.JTextField();
         lblErrEmailID = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -174,11 +178,11 @@ public class ManageUserAccount extends javax.swing.JPanel {
                 btnbackActionPerformed(evt);
             }
         });
-        add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 112, -1));
+        add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 777, 112, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Organization");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 234, -1, -1));
 
         btnCreate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnCreate.setText("Create");
@@ -187,7 +191,7 @@ public class ManageUserAccount extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
-        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 680, -1, -1));
 
         cboOrganization.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         cboOrganization.addActionListener(new java.awt.event.ActionListener() {
@@ -195,22 +199,17 @@ public class ManageUserAccount extends javax.swing.JPanel {
                 cboOrganizationActionPerformed(evt);
             }
         });
-        add(cboOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 264, -1));
+        add(cboOrganization, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 231, 264, -1));
 
         txtUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 264, -1));
+        add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 573, 264, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("User Name");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 576, -1, -1));
 
         cboRole.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        cboRole.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboRoleActionPerformed(evt);
-            }
-        });
-        add(cboRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 264, -1));
+        add(cboRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 518, 264, -1));
 
         tblUserAccount.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tblUserAccount.setModel(new javax.swing.table.DefaultTableModel(
@@ -238,22 +237,22 @@ public class ManageUserAccount extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblUserAccount);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 79, 964, 60));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 79, 964, 134));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Password");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 635, -1, -1));
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, 264, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 629, 264, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Employee");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 286, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Role");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 521, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("Manage UserAccount");
@@ -265,11 +264,11 @@ public class ManageUserAccount extends javax.swing.JPanel {
                 txtEmployeeNameFocusLost(evt);
             }
         });
-        add(txtEmployeeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 260, -1));
+        add(txtEmployeeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 326, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Address :");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 340, -1, -1));
 
         txtAddress.setColumns(20);
         txtAddress.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -277,44 +276,48 @@ public class ManageUserAccount extends javax.swing.JPanel {
         txtAddress.setEnabled(false);
         jScrollPane2.setViewportView(txtAddress);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 280, 40));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 490, -1));
 
         lblErrAddress.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrAddress.setForeground(new java.awt.Color(255, 0, 51));
         lblErrAddress.setText("errorMessage");
-        add(lblErrAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, 20));
+        add(lblErrAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, 20));
 
         lblErrUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrUsername.setForeground(new java.awt.Color(255, 0, 51));
         lblErrUsername.setText("errorMessage");
-        add(lblErrUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 290, -1, -1));
+        add(lblErrUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(481, 576, -1, -1));
 
         lblErrEmpName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrEmpName.setForeground(new java.awt.Color(255, 0, 51));
         lblErrEmpName.setText("errorMessage");
-        add(lblErrEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 160, -1, -1));
+        add(lblErrEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, -1, -1));
 
         lblErrPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrPass.setForeground(new java.awt.Color(255, 0, 51));
         lblErrPass.setText("errorMessage");
-        add(lblErrPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 350, -1, -1));
+        add(lblErrPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 632, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel12.setText("EmailID:");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 472, -1, -1));
 
         txtEmailID.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtEmailID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailIDActionPerformed(evt);
-            }
-        });
-        add(txtEmailID, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 220, -1));
+        add(txtEmailID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 400, -1));
 
         lblErrEmailID.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrEmailID.setForeground(new java.awt.Color(255, 0, 51));
         lblErrEmailID.setText("errorMessage");
-        add(lblErrEmailID, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 220, -1, -1));
+        add(lblErrEmailID, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 470, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Delete User");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 110, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
@@ -337,21 +340,56 @@ public class ManageUserAccount extends javax.swing.JPanel {
             lblErrUsername.setVisible(true);
             return;
         }
+        
+            Pattern p = Pattern.compile("^[a-zA-Z0-9\\s]+");
+            Matcher m = p.matcher(userName);  
+            if(!m.matches())
+            {
+                JOptionPane.showMessageDialog(null, "Invalid User Name");
+			return;
+            }
+        
         if(password.isEmpty()){
             lblErrPass.setText("Password cannot be blank");
             lblErrPass.setVisible(true);
             return;
         }
+        
+             p = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$");
+            m = p.matcher(password);  
+            if(!m.matches())
+            {
+                JOptionPane.showMessageDialog(null, "Password should contain atleast One Uppercase, one Lowercase, a number and a special character");
+            
+            return;
+            }
         if(name.isEmpty()){
             lblErrEmpName.setText("Employee Name cannot be blank");
             lblErrEmpName.setVisible(true);
             return;
         }
+        
+            p = Pattern.compile("^[a-zA-Z \\s]+");
+            m = p.matcher(name);  
+            if(!m.matches())
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Name");
+			return;
+            }
         if(address.isEmpty()){
             lblErrAddress.setText("Address cannot be blank");
             lblErrAddress.setVisible(true);
             return;
         }
+        
+        p = Pattern.compile("^[a-zA-Z,0-9 \\s]+");
+            m = p.matcher(address);  
+            if(!m.matches())
+            {
+                JOptionPane.showMessageDialog(null, "Invalid Address");
+			return;
+            }
+            
         if(txtEmailID.getText().isEmpty()){
             lblErrEmailID.setText("Email cannot be blank");
             lblErrEmailID.setVisible(true);
@@ -501,12 +539,43 @@ public class ManageUserAccount extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboRoleActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int row = tblUserAccount.getSelectedRow();
+		if (row < 0)
+		{
+			JOptionPane.showMessageDialog(null, "Please select User");
+			return;
+		}
+		
+		UserAccount tempUA = null;
+                
+                DefaultTableModel model = (DefaultTableModel) tblUserAccount.getModel();
+		String username = model.getValueAt(row, 0).toString();
+                
+                Organization tempOrg = null;
+                
+                for(int i =0 ; i< cboOrganization.getItemCount() ; i++ ){
+                    Organization org = (Organization) cboOrganization.getItemAt(i);
+             for (UserAccount ua : org.getUserAccountDirectory().getUserAccountArrayList()) {
+                if(username.equalsIgnoreCase(ua.getUsername()))
+                {
+                    tempOrg = org;
+                    tempUA = ua;
+                }
+            }            
+        }
+                
+               tempOrg.getUserAccountDirectory().getUserAccountArrayList().remove(tempUA);
+                popTableData();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnback;
     private javax.swing.JComboBox cboOrganization;
     private javax.swing.JComboBox cboRole;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

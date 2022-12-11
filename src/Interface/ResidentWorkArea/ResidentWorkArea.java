@@ -13,7 +13,9 @@ import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FoodCollectionWorkRequest;
 import java.awt.Font;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -113,7 +115,6 @@ public class ResidentWorkArea extends javax.swing.JPanel {
                         model.addRow(row); 
                }
          
-            
         }
         
     }
@@ -207,6 +208,7 @@ public class ResidentWorkArea extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFoodItemsToBeDonated = new javax.swing.JTable();
         btnDonation = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDonatedHistory = new javax.swing.JTable();
@@ -257,27 +259,39 @@ public class ResidentWorkArea extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Delete Food");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1050, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnDonation)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDonation)
                 .addGap(31, 31, 31))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1075, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(btnDonation)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDonation)
+                    .addComponent(jButton1))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Donation Requests", jPanel1);
@@ -435,9 +449,37 @@ public class ResidentWorkArea extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnDonationActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          int row = tblFoodItemsToBeDonated.getSelectedRow();
+		if (row < 0)
+		{
+			JOptionPane.showMessageDialog(null, "Please select Food");
+			return;
+		}
+		
+		List<Food> tempFood = new ArrayList<>();
+                DefaultTableModel model = (DefaultTableModel) tblFoodItemsToBeDonated.getModel();
+		String foodBarCode = model.getValueAt(row, 1).toString();
+
+		if (null != residentEmployee.getFoodDirectory().getFoodDirectory() && !residentEmployee.getFoodDirectory().getFoodDirectory().isEmpty())
+		{
+			for (Food food : residentEmployee.getFoodDirectory().getFoodDirectory())
+			{
+				if (foodBarCode.equalsIgnoreCase(String.valueOf(food.getFoodBarCode())))
+				{
+                                    tempFood.add(food);
+					
+				}
+			}
+		}
+                residentEmployee.getFoodDirectory().getFoodDirectory().removeAll(tempFood);
+		populateTable();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDonation;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

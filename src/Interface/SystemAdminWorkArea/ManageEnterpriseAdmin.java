@@ -6,6 +6,7 @@
 package Interface.SystemAdminWorkArea;
 
 import Business.City.City;
+import Business.Community.Community;
 import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Employee.FoodEnterpriseAdminEmployee;
@@ -24,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author gauripatil
+ * @author vrushaliphaltankar
  */
 public class ManageEnterpriseAdmin extends javax.swing.JPanel {
 
@@ -44,10 +45,10 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         lblErrPass.setVisible(false);
         lblErrName.setVisible(false);
         tblEnterpriseAdmin.getTableHeader().setFont(new Font("Tahoma", Font.PLAIN, 18));
-        
+
     }
-    
-    
+
+
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) tblEnterpriseAdmin.getModel();
 
@@ -65,22 +66,22 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
             }
         }
     }
-    
-     private void populateCityComboBox(){
+
+    private void populateCityComboBox(){
         cboCity.removeAllItems();
-        
+
         for (City city : system.getCitiesList()){
             cboCity.addItem(city);
         }
     }
-     
-      private void populateEnterpriseComboBox(City city){
+
+    private void populateEnterpriseComboBox(City city){
         cboEnterprise.removeAllItems();
-        
+
         for (Enterprise enterprise : city.getEnterpriseDirectory().getEnterpriseArrayList()){
             cboEnterprise.addItem(enterprise);
         }
-        
+
     }
 
     /**
@@ -110,6 +111,7 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         lblErrUsername = new javax.swing.JLabel();
         lblErrPass = new javax.swing.JLabel();
         lblErrName = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Enterprise Admin");
@@ -198,6 +200,14 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         lblErrName.setForeground(java.awt.Color.red);
         lblErrName.setText("jLabel7");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Delete User");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,17 +254,25 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
                             .addComponent(btnBack))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton1)))
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -315,22 +333,23 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         Employee e = null;
         if (enterprise instanceof FoodManagementEnterprise){
             e = new FoodEnterpriseAdminEmployee();
-            
+
         }
         else {
-            
+
             //create employee for waste
         }
-        
+
         String username = txtUserName.getText();
         String password = String.valueOf(txtPassword.getPassword());
         String name = txtName.getText();
-        
+
         if(username.isEmpty() ){
             lblErrUsername.setText("User Name cannot be blank");
             lblErrUsername.setVisible(true);
             return;
         }
+        
         
         Pattern p = Pattern.compile("^[a-z\\s]+");
         Matcher m = p.matcher(username);  
@@ -364,8 +383,8 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         
         if(name.isEmpty() ){
             
-            lblErrName.setText("Name cannot be blank");
-            lblErrName.setVisible(true);
+            txtName.setText("Name cannot be blank");
+            txtName.setVisible(true);
             return;
         }
         
@@ -380,22 +399,22 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
             
             return;
         }
-        
+
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name,null,e);
-        
+
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new FoodEnterpriseAdminRole() );
         populateTable();
         txtName.setText("");
         txtUserName.setText("");
         txtPassword.setText("");
         JOptionPane.showMessageDialog(null, "User account made successfully");
-        
+
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-         Component[] componentArray = userProcessContainer.getComponents();
+        Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         SystemAdminWorkArea systemAdminwjp = (SystemAdminWorkArea) component;
         systemAdminwjp.populateJtree();
@@ -403,12 +422,50 @@ public class ManageEnterpriseAdmin extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int row = tblEnterpriseAdmin.getSelectedRow();
+		if (row < 0)
+		{
+			JOptionPane.showMessageDialog(null, "Please select User");
+			return;
+		}
+		
+		UserAccount tempUA = null;
+                Enterprise tempEnterprise = null;
+                DefaultTableModel model = (DefaultTableModel) tblEnterpriseAdmin.getModel();
+		String username = model.getValueAt(row, 2).toString();
+                String EnterpriseName = model.getValueAt(row, 0).toString();
+                
+                for (City city : system.getCitiesList()) 
+                {
+            for (Enterprise enterprise : city.getEnterpriseDirectory().getEnterpriseArrayList())
+                    {
+                        if(enterprise.getName().equalsIgnoreCase(EnterpriseName))
+                        {
+                            tempEnterprise = enterprise;
+                        }
+                    }
+                }
+             
+            for (UserAccount useraccount : tempEnterprise.getUserAccountDirectory().getUserAccountArrayList()){
+                     if(username.equalsIgnoreCase(useraccount.getUsername()))
+                        {
+                            tempUA = useraccount;
+                            break;
+                        }
+                
+                }
+               tempEnterprise.getUserAccountDirectory().getUserAccountArrayList().remove(tempUA);
+                populateTable();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JComboBox cboEnterprise;
     private javax.swing.JComboBox cboCity;
+    private javax.swing.JComboBox cboEnterprise;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
