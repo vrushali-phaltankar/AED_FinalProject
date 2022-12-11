@@ -5,6 +5,7 @@
  */
 package Interface.FoodEnterpriseAdminWorkArea;
 
+import Business.City.City;
 import Business.Community.Community;
 import Business.Employee.CommunityAdminEmployee;
 import Business.Employee.Employee;
@@ -106,6 +107,7 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         txtAdminName = new javax.swing.JTextField();
         lblErrCommunityName = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Manage Community Admin");
@@ -187,6 +189,14 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
         lblErrCommunityName.setForeground(new java.awt.Color(255, 0, 51));
         lblErrCommunityName.setText("errMessage");
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setText("Delete User");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -222,16 +232,23 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
                         .addComponent(btnBack))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(264, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton1)))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jButton1)))
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -363,11 +380,48 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int row = tblCommunityAdmin.getSelectedRow();
+		if (row < 0)
+		{
+			JOptionPane.showMessageDialog(null, "Please select User");
+			return;
+		}
+		
+		UserAccount tempUA = null;
+                Community tempCommunity = null;
+                DefaultTableModel model = (DefaultTableModel) tblCommunityAdmin.getModel();
+		String username = model.getValueAt(row, 1).toString();
+                String communityName = model.getValueAt(row, 0).toString();
+                
+                FoodManagementEnterprise foodManagementEnterprise = (FoodManagementEnterprise) enterprise;
+            
+            for(Community community : foodManagementEnterprise.getCommunityArrayList() ){
+                if(communityName.equalsIgnoreCase(community.getCommunityName()))
+                        {
+                            tempCommunity = community;
+                            break;
+                        }
+            }
+                
+            for (UserAccount useraccount : tempCommunity.getCommunityOrganization().getUserAccountDirectory().getUserAccountArrayList()){
+                     if(username.equalsIgnoreCase(useraccount.getUsername()))
+                        {
+                            tempUA = useraccount;
+                            break;
+                        }
+                
+                }
+               tempCommunity.getCommunityOrganization().getUserAccountDirectory().getUserAccountArrayList().remove(tempUA);
+                populateTable();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox cboCommunity;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
