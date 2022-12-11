@@ -5,11 +5,14 @@
  */
 package Interface.FoodEnterpriseAdminWorkArea;
 
+import Business.City.City;
 import Business.Community.Community;
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.FoodManagementEnterprise;
+import Interface.SystemAdminWorkArea.UpdateValue;
 import java.awt.CardLayout;
 import java.awt.Font;
+import static java.time.Clock.system;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -29,6 +32,7 @@ public class ManageCommunity extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private Enterprise enterprise;
+    private FoodManagementEnterprise foodManagementEnterprise;
     public ManageCommunity(JPanel userProcessContainer,Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -44,6 +48,7 @@ public class ManageCommunity extends javax.swing.JPanel {
         model.setRowCount(0);
         if (enterprise instanceof FoodManagementEnterprise){
           FoodManagementEnterprise foodManagementEnterprise  =(FoodManagementEnterprise) enterprise;
+          this.foodManagementEnterprise = foodManagementEnterprise;
              for(Community community: foodManagementEnterprise.getCommunityArrayList() ){
                  
                  Object[] row = new Object[1];
@@ -74,6 +79,7 @@ public class ManageCommunity extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         label1.setText("label1");
 
@@ -140,6 +146,14 @@ public class ManageCommunity extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setText("Update Community");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -152,7 +166,9 @@ public class ManageCommunity extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(75, 75, 75)
-                                .addComponent(jButton1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton1)
+                                    .addComponent(jButton3)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
@@ -168,7 +184,7 @@ public class ManageCommunity extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBack)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +197,9 @@ public class ManageCommunity extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jButton1)))
+                        .addComponent(jButton1)
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton3)))
                 .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -276,11 +294,41 @@ public class ManageCommunity extends javax.swing.JPanel {
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int row = tblCommunity.getSelectedRow();
+		if (row < 0)
+		{
+			JOptionPane.showMessageDialog(null, "Please select community");
+			return;
+		}
+		
+		Community tempCommunity = null;
+
+                DefaultTableModel model = (DefaultTableModel) tblCommunity.getModel();
+		String communityName = model.getValueAt(row, 0).toString();
+                
+		if (null != foodManagementEnterprise.getCommunityArrayList() && !foodManagementEnterprise.getCommunityArrayList().isEmpty())
+		{
+			for (Community community : foodManagementEnterprise.getCommunityArrayList())
+			{
+				if (communityName.equalsIgnoreCase(community.getCommunityName()))
+				{
+					tempCommunity = community;
+					break;
+				}
+			}
+		}
+
+		new UpdateValue(tempCommunity,null,foodManagementEnterprise,this).setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
