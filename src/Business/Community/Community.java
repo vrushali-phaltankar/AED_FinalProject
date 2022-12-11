@@ -39,11 +39,11 @@ public class Community {
         restaurantOrganization = new RestaurantOrganization();
     }
 
-    public ResidentOrganization getCitizenOrganization() {
+    public ResidentOrganization getResidentOrganization() {
         return residentOrganization;
     }
 
-    public void setCitizenOrganization(ResidentOrganization residentOrganization) {
+    public void setResidentOrganization(ResidentOrganization residentOrganization) {
         this.residentOrganization = residentOrganization;
     }
 

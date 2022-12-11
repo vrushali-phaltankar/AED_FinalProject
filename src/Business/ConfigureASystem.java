@@ -58,8 +58,8 @@ public class ConfigureASystem {
         Employee e = fdm.getEmployeeDirectory().createEmployee("ABCFoodAdmin 1",null,new FoodEnterpriseAdminEmployee());
         fdm.getUserAccountDirectory().createUserAccount("f1", "f1", e, new FoodEnterpriseAdminRole());
         
-        Employee sensor = fdm.getEmployeeDirectory().createEmployee("Sensor",null,new FoodEnterpriseAdminEmployee());
-        fdm.getUserAccountDirectory().createUserAccount("ss", "ss", sensor, new FoodProviderRole());
+        Employee foodProviderEmployee = fdm.getEmployeeDirectory().createEmployee("Sensor",null,new FoodEnterpriseAdminEmployee());
+        fdm.getUserAccountDirectory().createUserAccount("ss", "ss", foodProviderEmployee, new FoodProviderRole());
         
   
         //Create Community
@@ -71,9 +71,9 @@ public class ConfigureASystem {
         Employee fcd = fenway.getFoodCollectionOrganization().getEmployeeDirectory().createEmployee("fcd",fenway, new FoodCollectionDriverEmployee());
         Employee fds =  fenway.getFoodDistributionOrganization().getEmployeeDirectory().createEmployee("fds",fenway, new FoodDistributionSupervisorEmployee());
         Employee fss =  fenway.getFoodStandardOrganization().getEmployeeDirectory().createEmployee("fss",fenway, new FoodStandardSupervisorEmployee());
-        Employee citizen1 = fenway.getCitizenOrganization().getEmployeeDirectory().createEmployee("gauri", fenway, new ResidentEmployee());
-        citizen1.setAddress("125 Park Drive, Boston, MA 02115");
-        citizen1.setEmailID("gauripatil@gmail.com");        
+        Employee resident1 = fenway.getResidentOrganization().getEmployeeDirectory().createEmployee("gauri", fenway, new ResidentEmployee());
+        resident1.setAddress("125 Park Drive, Boston, MA 02115");
+        resident1.setEmailID("gauripatil@gmail.com");        
         Employee restaurant1 = fenway.getRestaurantOrganization().getEmployeeDirectory().createEmployee("mumbai spice", fenway, new RestaurantEmployee());
         restaurant1.setAddress("251 Massachusetts Ave, Boston, MA 02115");
         restaurant1.setEmailID("phaltankarvrushali@gmail.com");
@@ -87,11 +87,11 @@ public class ConfigureASystem {
         fenway.getFoodCollectionOrganization().getUserAccountDirectory().createUserAccount("fcd", "fcd", fcd, new FoodCollectionDriverRole());
         fenway.getFoodDistributionOrganization().getUserAccountDirectory().createUserAccount("fds", "fds", fds, new FoodDistributionAdminRole());
         fenway.getFoodStandardOrganization().getUserAccountDirectory().createUserAccount("fss", "fss", fss, new FoodStandardAdminRole());
-        fenway.getCitizenOrganization().getUserAccountDirectory().createUserAccount("gauri", "gauri", citizen1, new ResidentRole());
+        fenway.getResidentOrganization().getUserAccountDirectory().createUserAccount("gauri", "gauri", resident1, new ResidentRole());
         fenway.getRestaurantOrganization().getUserAccountDirectory().createUserAccount("spice", "spice", restaurant1, new RestuarantRole());
      
         FridgeSimulation simulator = new FridgeSimulation();
-        createFoodForEmployee(simulator,5,citizen1);
+        createFoodForEmployee(simulator,5,resident1);
         createFoodForEmployee(simulator,10, restaurant1);
         
         return system;        
