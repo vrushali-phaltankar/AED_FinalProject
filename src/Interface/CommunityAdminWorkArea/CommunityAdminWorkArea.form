@@ -29,13 +29,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnManageUserAccount" min="-2" pref="398" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnViewEmployee" alignment="0" min="-2" pref="398" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnViewEmployee" min="-2" pref="398" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnBestRestaurant" min="-2" pref="398" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="btnBestResident" alignment="0" min="-2" pref="398" max="-2" attributes="0"/>
-                          <Component id="btnBestRestaurant" alignment="0" min="-2" pref="398" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="449" max="32767" attributes="0"/>
+              <EmptySpace pref="33" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,13 +54,14 @@
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="btnManageUserAccount" min="-2" pref="58" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Component id="btnViewEmployee" min="-2" pref="54" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="btnBestResident" min="-2" pref="66" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnViewEmployee" alignment="3" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnBestRestaurant" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Component id="btnBestRestaurant" min="-2" pref="67" max="-2" attributes="0"/>
-              <EmptySpace pref="347" max="32767" attributes="0"/>
+              <Component id="btnBestResident" min="-2" pref="66" max="-2" attributes="0"/>
+              <EmptySpace pref="456" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
