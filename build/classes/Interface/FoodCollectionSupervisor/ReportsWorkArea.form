@@ -28,9 +28,9 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="btnFoodCollectedCitizen" alignment="1" min="-2" pref="510" max="-2" attributes="0"/>
+                                  <Component id="btnFoodCollectedResident" alignment="1" min="-2" pref="510" max="-2" attributes="0"/>
                                   <Component id="btnFoodCollectedRestaurqant" min="-2" pref="510" max="-2" attributes="0"/>
-                                  <Component id="btnBestCitizen" alignment="1" min="-2" pref="510" max="-2" attributes="0"/>
+                                  <Component id="btnBestResident" alignment="1" min="-2" pref="510" max="-2" attributes="0"/>
                                   <Component id="btnMostPopularArea" alignment="1" min="-2" pref="510" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
@@ -51,9 +51,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-              <Component id="btnBestCitizen" min="-2" pref="46" max="-2" attributes="0"/>
+              <Component id="btnBestResident" min="-2" pref="46" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Component id="btnFoodCollectedCitizen" min="-2" pref="53" max="-2" attributes="0"/>
+              <Component id="btnFoodCollectedResident" min="-2" pref="53" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Component id="btnFoodCollectedRestaurqant" min="-2" pref="55" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
         <Property name="text" type="java.lang.String" value="Food Collection Admin Reports"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnBestCitizen">
+    <Component class="javax.swing.JButton" name="btnBestResident">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
@@ -82,18 +82,18 @@
         <Property name="text" type="java.lang.String" value="Types Of Food Collected in a time Period &gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBestCitizenActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBestResidentActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnFoodCollectedCitizen">
+    <Component class="javax.swing.JButton" name="btnFoodCollectedResident">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Types of food collected from all the Citizen &gt;&gt;"/>
+        <Property name="text" type="java.lang.String" value="Types of food collected from all the Resident &gt;&gt;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFoodCollectedCitizenActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFoodCollectedResidentActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnFoodCollectedRestaurqant">

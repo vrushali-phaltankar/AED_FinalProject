@@ -11,7 +11,7 @@ import Business.FoodProvider.Food;
 
 /**
  *
- * @author Yash
+ * @author yash
  */
 public class FoodStandardWorkRequest extends WorkRequest {
  

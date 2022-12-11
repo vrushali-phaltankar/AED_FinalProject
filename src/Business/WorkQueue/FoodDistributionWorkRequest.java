@@ -10,7 +10,7 @@ import Business.FoodProvider.Food;
 
 /**
  *
- * @author Yash
+ * @author yash
  */
 public class FoodDistributionWorkRequest extends WorkRequest {
      

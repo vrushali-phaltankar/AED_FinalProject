@@ -11,7 +11,7 @@ import Business.FoodProvider.Food;
 
 /**
  *
- * @author Yash
+ * @author yash
  */
 public class FoodCollectionWorkRequest extends WorkRequest {
     
@@ -58,7 +58,7 @@ public class FoodCollectionWorkRequest extends WorkRequest {
         this.restaurantEmployee = restaurantEmployee;
     }
 
-    
+  
     
     
     
