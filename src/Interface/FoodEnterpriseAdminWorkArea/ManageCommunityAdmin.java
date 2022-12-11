@@ -331,6 +331,21 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
         
         Community c = (Community) cboCommunity.getSelectedItem();
         
+        if(null != c.getCommunityOrganization().getUserAccountDirectory().getUserAccountArrayList() && !c.getCommunityOrganization().getUserAccountDirectory().getUserAccountArrayList().isEmpty())
+        {
+            for(UserAccount ua : c.getCommunityOrganization().getUserAccountDirectory().getUserAccountArrayList())
+            {
+                if(userName.equalsIgnoreCase(ua.getUsername()))
+                {
+                    txtUserName.setText("");
+                    txtPassword.setText("");
+                    txtAdminName.setText("");
+                    JOptionPane.showMessageDialog(null, "User already exist in the System");
+            
+                    return;
+                }
+            }
+        }
         Employee ee = c.getCommunityOrganization().getEmployeeDirectory().createEmployee(name,c,new CommunityAdminEmployee());
         UserAccount uu = c.getCommunityOrganization().getUserAccountDirectory().createUserAccount(userName, password, ee, new CommunityAdminRole());
         txtAdminName.setText("");
