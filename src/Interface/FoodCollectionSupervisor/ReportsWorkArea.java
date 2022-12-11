@@ -43,41 +43,63 @@ public class ReportsWorkArea extends javax.swing.JPanel {
         btnFoodCollectedRestaurqant = new javax.swing.JButton();
         btnMostPopularArea = new javax.swing.JButton();
         btnback = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(25, 118, 242));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Food Collection Admin Reports");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, -1));
 
-        btnBestResident.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnBestResident.setText("Types Of Food Collected in a time Period >>");
+        btnBestResident.setBackground(new java.awt.Color(25, 118, 242));
+        btnBestResident.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btnBestResident.setForeground(new java.awt.Color(255, 255, 255));
+        btnBestResident.setText("Types Of Food gathered during the time frame");
+        btnBestResident.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnBestResident.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBestResidentActionPerformed(evt);
             }
         });
+        add(btnBestResident, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 470, 60));
 
-        btnFoodCollectedResident.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnFoodCollectedResident.setText("Types of food collected from all the Resident >>");
+        btnFoodCollectedResident.setBackground(new java.awt.Color(25, 118, 242));
+        btnFoodCollectedResident.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btnFoodCollectedResident.setForeground(new java.awt.Color(255, 255, 255));
+        btnFoodCollectedResident.setText("Types of food collected from  the Residents");
+        btnFoodCollectedResident.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnFoodCollectedResident.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFoodCollectedResidentActionPerformed(evt);
             }
         });
+        add(btnFoodCollectedResident, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 480, 53));
 
-        btnFoodCollectedRestaurqant.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnFoodCollectedRestaurqant.setText("Types of food collected from all the Restaurants >>");
+        btnFoodCollectedRestaurqant.setBackground(new java.awt.Color(25, 118, 242));
+        btnFoodCollectedRestaurqant.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btnFoodCollectedRestaurqant.setForeground(new java.awt.Color(255, 255, 255));
+        btnFoodCollectedRestaurqant.setText("Types of food collected from the Restaurants");
+        btnFoodCollectedRestaurqant.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnFoodCollectedRestaurqant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFoodCollectedRestaurqantActionPerformed(evt);
             }
         });
+        add(btnFoodCollectedRestaurqant, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, 470, 55));
 
-        btnMostPopularArea.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnMostPopularArea.setText("Most popular area of Donation >>");
+        btnMostPopularArea.setBackground(new java.awt.Color(25, 118, 242));
+        btnMostPopularArea.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btnMostPopularArea.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostPopularArea.setText("Most popular locality of Donation");
+        btnMostPopularArea.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnMostPopularArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostPopularAreaActionPerformed(evt);
             }
         });
+        add(btnMostPopularArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 470, 56));
 
         btnback.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnback.setText("<< Back");
@@ -86,48 +108,8 @@ public class ReportsWorkArea extends javax.swing.JPanel {
                 btnbackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(299, 299, 299))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnFoodCollectedResident, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnFoodCollectedRestaurqant, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnMostPopularArea, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(209, 209, 209))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnback, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(67, 67, 67)
-                .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(btnFoodCollectedResident, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(btnFoodCollectedRestaurqant, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(btnMostPopularArea, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
-                .addComponent(btnback)
-                .addContainerGap())
-        );
+        add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 695, 112, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 430, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBestResidentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBestResidentActionPerformed
@@ -179,5 +161,6 @@ public class ReportsWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton btnMostPopularArea;
     private javax.swing.JButton btnback;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
