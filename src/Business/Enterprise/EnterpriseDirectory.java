@@ -35,10 +35,16 @@ public class EnterpriseDirectory {
             enterprise = new WasteDisposalEnterprise(name);
             enterpriseArrayList.add(enterprise);
         }
+        else if (type == Enterprise.EnterpriseType.TransportManagement){
+            enterprise = new TransportManagementEnterprise(name);
+            enterpriseArrayList.add(enterprise);
+        }
+        else if (type == Enterprise.EnterpriseType.FoodQualityManagement){
+            enterprise = new FoodQualityManagementEnterprise(name);
+            enterpriseArrayList.add(enterprise);
+        }
         
         return enterprise;
     }
-    
-    
-    
+ 
 }
