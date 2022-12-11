@@ -22,6 +22,11 @@ Donors can view their current incomplete donations (if any).
 Donors can also view all their past donations.
 Donors can update their profile.
 
+# Special Features
+User gets email confirmation at the time of registration
+Visual representation of the type of food that has been donated
+Admins and Coordinators gets a visual representation of the datapoints
+
 # Admin Features
 Admins receive all the requests made by donors.
 Admins can accept or reject the donation requests depending upon the details provided by a donor.
@@ -95,4 +100,4 @@ RestaurantRole
 # Contributors:
 Vrushali Phaltankar 002798568 </br>
 Gauri Patil </br>
-Yash Pankhania </br>
+Yash Pankhania 002770477 </br>

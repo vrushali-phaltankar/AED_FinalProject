@@ -53,8 +53,6 @@ public class OrganizationDirectory {
             organizationArrayList.add(organization);
         }
         
-    
-   
         return organization;
     }
 }
