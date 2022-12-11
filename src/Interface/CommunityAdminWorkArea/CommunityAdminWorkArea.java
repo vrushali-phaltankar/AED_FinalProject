@@ -113,7 +113,7 @@ public class CommunityAdminWorkArea extends javax.swing.JPanel {
         });
 
         btnBestRestaurant.setBackground(new java.awt.Color(25, 118, 242));
-        btnBestRestaurant.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnBestRestaurant.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
         btnBestRestaurant.setForeground(new java.awt.Color(255, 255, 255));
         btnBestRestaurant.setText("Know your best Restaurant");
         btnBestRestaurant.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
@@ -176,7 +176,7 @@ public class CommunityAdminWorkArea extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBestRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
