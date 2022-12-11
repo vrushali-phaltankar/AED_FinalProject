@@ -59,42 +59,65 @@ public class CommunityAdminWorkArea extends javax.swing.JPanel {
         btnManageUserAccount = new javax.swing.JButton();
         btnBestResident = new javax.swing.JButton();
         btnBestRestaurant = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(25, 118, 242));
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Community Admin Work Area");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Community Name :");
 
-        lblCommunityName.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        lblCommunityName.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        lblCommunityName.setForeground(new java.awt.Color(255, 255, 255));
         lblCommunityName.setText("jLabel3");
 
-        btnViewEmployee.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnViewEmployee.setText("View Employee >>");
+        btnViewEmployee.setBackground(new java.awt.Color(25, 118, 242));
+        btnViewEmployee.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        btnViewEmployee.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewEmployee.setText("View Employee");
+        btnViewEmployee.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnViewEmployee.setPreferredSize(new java.awt.Dimension(182, 26));
         btnViewEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewEmployeeActionPerformed(evt);
             }
         });
 
-        btnManageUserAccount.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnManageUserAccount.setText("Manage User Account >>");
+        btnManageUserAccount.setBackground(new java.awt.Color(25, 118, 242));
+        btnManageUserAccount.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        btnManageUserAccount.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageUserAccount.setText("Manage User Account");
+        btnManageUserAccount.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnManageUserAccount.setPreferredSize(new java.awt.Dimension(182, 26));
         btnManageUserAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageUserAccountActionPerformed(evt);
             }
         });
 
-        btnBestResident.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnBestResident.setText("Know your best Resident >>");
+        btnBestResident.setBackground(new java.awt.Color(25, 118, 242));
+        btnBestResident.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
+        btnBestResident.setForeground(new java.awt.Color(255, 255, 255));
+        btnBestResident.setText("Know your best Resident");
+        btnBestResident.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnBestResident.setPreferredSize(new java.awt.Dimension(182, 26));
         btnBestResident.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBestResidentActionPerformed(evt);
             }
         });
 
+        btnBestRestaurant.setBackground(new java.awt.Color(25, 118, 242));
         btnBestRestaurant.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnBestRestaurant.setText("Know your best Restaurant >>");
+        btnBestRestaurant.setForeground(new java.awt.Color(255, 255, 255));
+        btnBestRestaurant.setText("Know your best Restaurant");
+        btnBestRestaurant.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnBestRestaurant.setPreferredSize(new java.awt.Dimension(182, 26));
         btnBestRestaurant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBestRestaurantActionPerformed(evt);
@@ -106,42 +129,54 @@ public class CommunityAdminWorkArea extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
                         .addGap(28, 28, 28)
                         .addComponent(lblCommunityName))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
+                        .addGap(332, 332, 332)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(352, 352, 352)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnManageUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnBestRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(33, Short.MAX_VALUE))
+                                .addComponent(btnBestRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnManageUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBestResident, btnBestRestaurant, btnManageUserAccount, btnViewEmployee});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblCommunityName))
-                .addGap(31, 31, 31)
-                .addComponent(btnManageUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBestRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(456, Short.MAX_VALUE))
+                    .addComponent(btnManageUserAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBestRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBestResident, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -186,6 +221,7 @@ public class CommunityAdminWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton btnViewEmployee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblCommunityName;
     // End of variables declaration//GEN-END:variables
 }
