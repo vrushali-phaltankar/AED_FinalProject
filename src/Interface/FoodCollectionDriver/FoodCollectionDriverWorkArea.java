@@ -79,10 +79,15 @@ public class FoodCollectionDriverWorkArea extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtComments = new javax.swing.JTextArea();
         btnProcessRequest = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+
+        setBackground(new java.awt.Color(25, 118, 242));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Food Collection Driver Work Area");
 
+        tblFoodCollectionDriver.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         tblFoodCollectionDriver.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -113,15 +118,19 @@ public class FoodCollectionDriverWorkArea extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblFoodCollectionDriver);
 
         lblComments.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblComments.setForeground(new java.awt.Color(255, 255, 255));
         lblComments.setText("Comments:");
 
         txtComments.setColumns(20);
-        txtComments.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtComments.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         txtComments.setRows(5);
         jScrollPane2.setViewportView(txtComments);
 
-        btnProcessRequest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnProcessRequest.setText("Process Request >>");
+        btnProcessRequest.setBackground(new java.awt.Color(25, 118, 242));
+        btnProcessRequest.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnProcessRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnProcessRequest.setText("Process Request");
+        btnProcessRequest.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnProcessRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProcessRequestActionPerformed(evt);
@@ -134,38 +143,46 @@ public class FoodCollectionDriverWorkArea extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblComments)
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnProcessRequest)))
+                .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel1)
+                        .addGap(15, 15, 15))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(430, 430, 430))
             .addGroup(layout.createSequentialGroup()
-                .addGap(401, 401, 401)
-                .addComponent(jLabel1)
-                .addGap(0, 533, Short.MAX_VALUE))
+                .addGap(402, 402, 402)
+                .addComponent(lblComments)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnProcessRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97)))
+                .addContainerGap(451, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(lblComments))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(btnProcessRequest)))
-                .addContainerGap(319, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addComponent(lblComments)))
+                .addGap(46, 46, 46)
+                .addComponent(btnProcessRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(201, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -237,6 +254,7 @@ public class FoodCollectionDriverWorkArea extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblComments;
     private javax.swing.JTable tblFoodCollectionDriver;
     private javax.swing.JTextArea txtComments;
