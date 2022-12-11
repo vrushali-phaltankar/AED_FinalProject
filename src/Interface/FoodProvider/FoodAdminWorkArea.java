@@ -32,7 +32,7 @@ public class FoodAdminWorkArea extends javax.swing.JPanel {
     /**
      * Creates new form FoodAdminWorkArea
      */
-    
+static int foodBarcode = 0;
 private JPanel userProcessContainer;
 private FoodManagementEnterprise enterprise;
 
@@ -437,6 +437,8 @@ private FoodManagementEnterprise enterprise;
         foodItem.setFoodType(foodType);
         foodItem.setQuantity(quantity);
         foodItem.setFoodName(foodName);
+        foodItem.setFoodBarCode(foodBarcode);
+        ++foodBarcode;
         
         Calendar cc1 = Calendar.getInstance();
         cc1.setTime(date1);

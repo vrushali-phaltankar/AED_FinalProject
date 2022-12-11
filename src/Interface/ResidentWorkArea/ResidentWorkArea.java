@@ -115,7 +115,6 @@ public class ResidentWorkArea extends javax.swing.JPanel {
                         model.addRow(row); 
                }
          
-            
         }
         
     }
