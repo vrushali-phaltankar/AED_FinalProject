@@ -238,10 +238,13 @@ public class BestRestaurant extends javax.swing.JPanel {
         ArrayList<RestaurantEmployee> restaurantEmployee = calculateTopThreeRestaurantByRewardPoints(restaurantEmployeeList);
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        if(null!= restaurantEmployee && !restaurantEmployee.isEmpty()) {
+            
         dataset.setValue(restaurantEmployee.get(0).getCurrentRewardPoints(), "Commercial body", restaurantEmployee.get(0).getName());
         dataset.setValue(restaurantEmployee.get(1).getCurrentRewardPoints(), "Commercial body", restaurantEmployee.get(1).getName());
         dataset.setValue(restaurantEmployee.get(2).getCurrentRewardPoints(),  "Commercial body",restaurantEmployee.get(2).getName());
-
+        
+        }
         JFreeChart chart = ChartFactory.createBarChart3D("Types of food collected", "Top 3 Restaurant", "Number of reward points", dataset, PlotOrientation.VERTICAL, false, true, false);
         CategoryPlot plot = chart.getCategoryPlot();
         plot.setRangeGridlinePaint(Color.BLUE);
