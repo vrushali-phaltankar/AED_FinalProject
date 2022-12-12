@@ -191,11 +191,21 @@ public class FoodStandardSupervisorWorkArea extends javax.swing.JPanel {
             }
 
         };
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(25, 118, 242));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Food Standard Supervisor Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 23, -1, -1));
 
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTabbedPane1.setBackground(new java.awt.Color(25, 118, 242));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(25, 118, 242));
 
         tblFoodStandardSupervisorWorkRequest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tblFoodStandardSupervisorWorkRequest.setModel(new javax.swing.table.DefaultTableModel(
@@ -226,16 +236,22 @@ public class FoodStandardSupervisorWorkArea extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tblFoodStandardSupervisorWorkRequest);
 
-        btnApprove.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnApprove.setBackground(new java.awt.Color(25, 118, 242));
+        btnApprove.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnApprove.setForeground(new java.awt.Color(255, 255, 255));
         btnApprove.setText("Approve");
+        btnApprove.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnApproveActionPerformed(evt);
             }
         });
 
-        btnDisApprove.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnDisApprove.setBackground(new java.awt.Color(25, 118, 242));
+        btnDisApprove.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnDisApprove.setForeground(new java.awt.Color(255, 255, 255));
         btnDisApprove.setText("Disapprove");
+        btnDisApprove.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnDisApprove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDisApproveActionPerformed(evt);
@@ -251,25 +267,27 @@ public class FoodStandardSupervisorWorkArea extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnApprove)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDisApprove))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1502, Short.MAX_VALUE))
+                        .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDisApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1525, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnApprove)
-                    .addComponent(btnDisApprove))
-                .addGap(111, 111, 111))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDisApprove, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnApprove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View New Requests", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(25, 118, 242));
 
         tblApprovedRequests.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tblApprovedRequests.setModel(new javax.swing.table.DefaultTableModel(
@@ -314,10 +332,12 @@ public class FoodStandardSupervisorWorkArea extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Approved Requests", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(25, 118, 242));
 
         tblDisapprovedRequests.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tblDisapprovedRequests.setModel(new javax.swing.table.DefaultTableModel(
@@ -361,34 +381,13 @@ public class FoodStandardSupervisorWorkArea extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Disapproved Requests", jPanel3);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1537, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(366, 366, 366)
-                        .addComponent(jLabel1)))
-                .addContainerGap(79, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
-        );
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 116, 1537, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 520, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDisApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisApproveActionPerformed
@@ -455,6 +454,7 @@ public class FoodStandardSupervisorWorkArea extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblApprovedRequests;
     private javax.swing.JTable tblDisapprovedRequests;

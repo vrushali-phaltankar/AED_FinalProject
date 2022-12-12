@@ -39,53 +39,40 @@ public class FoodCollectionAdmin extends javax.swing.JPanel {
         btnViewRequest = new javax.swing.JButton();
         btnReports = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        btnViewRequest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnViewRequest.setText("View Requests >>");
+        setBackground(new java.awt.Color(25, 118, 242));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnViewRequest.setBackground(new java.awt.Color(25, 118, 242));
+        btnViewRequest.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnViewRequest.setForeground(new java.awt.Color(255, 255, 255));
+        btnViewRequest.setText("View Requests");
+        btnViewRequest.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnViewRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewRequestActionPerformed(evt);
             }
         });
+        add(btnViewRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 162, 330, 58));
 
-        btnReports.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnReports.setText("Consumed vs Wasted Food >> ");
+        btnReports.setBackground(new java.awt.Color(25, 118, 242));
+        btnReports.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnReports.setForeground(new java.awt.Color(255, 255, 255));
+        btnReports.setText("Consumed vs Wasted Food");
+        btnReports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportsActionPerformed(evt);
             }
         });
+        add(btnReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(411, 273, 330, 60));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Food Standard Supervisor Work Area");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                            .addComponent(btnViewRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel2)))
-                .addContainerGap(309, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(70, 70, 70)
-                .addComponent(btnViewRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
-        );
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 77, 540, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewRequestActionPerformed
@@ -110,5 +97,6 @@ public class FoodCollectionAdmin extends javax.swing.JPanel {
     private javax.swing.JButton btnReports;
     private javax.swing.JButton btnViewRequest;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
