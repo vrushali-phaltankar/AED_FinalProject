@@ -92,7 +92,6 @@ Food standard admin will check the quality of the food.
 ## Workflow Model:
 ![Workflow_Diagram](https://user-images.githubusercontent.com/114446858/206950450-a003e598-138f-4a6a-a784-ad3095ebf6b8.jpg)
 
-
 ## Class Diagram: 
 
 ## Sequence Diagram: 
