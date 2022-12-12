@@ -80,143 +80,158 @@ public class ManageCity extends javax.swing.JPanel
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
-	private void initComponents()
-	{
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-		jScrollPane1 = new javax.swing.JScrollPane();
-		tblCity = new javax.swing.JTable();
-		jLabel1 = new javax.swing.JLabel();
-		jLabel2 = new javax.swing.JLabel();
-		txtCity = new javax.swing.JTextField();
-		btnSubmit = new javax.swing.JButton();
-		lblErrCity = new javax.swing.JLabel();
-		btnBack = new javax.swing.JButton();
-		jPanel1 = new javax.swing.JPanel();
-		jDeleteCity = new javax.swing.JButton();
-		jUpdateCity = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCity = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtCity = new javax.swing.JTextField();
+        btnSubmit = new javax.swing.JButton();
+        lblErrCity = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        jUpdateCity = new javax.swing.JButton();
+        jDeleteCity = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
-		tblCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		tblCity.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
+        setBackground(new java.awt.Color(25, 118, 242));
 
-		}, new String[] { "Area(City)" }));
-		jScrollPane1.setViewportView(tblCity);
+        tblCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tblCity.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-		jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-		jLabel1.setText("Manage City");
+            },
+            new String [] {
+                "Area(City)"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCity);
 
-		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		jLabel2.setText("Area(City)");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Manage City");
 
-		txtCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		txtCity.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt)
-			{
-				txtCityActionPerformed(evt);
-			}
-		});
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("City");
 
-		btnSubmit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		btnSubmit.setText("Submit");
-		btnSubmit.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt)
-			{
-				btnSubmitActionPerformed(evt);
-			}
-		});
+        txtCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCityActionPerformed(evt);
+            }
+        });
 
-		lblErrCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		lblErrCity.setForeground(new java.awt.Color(204, 0, 51));
-		lblErrCity.setText("errMessage");
+        btnSubmit.setBackground(new java.awt.Color(25, 118, 242));
+        btnSubmit.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
 
-		btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		btnBack.setText("<<Back");
-		btnBack.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt)
-			{
-				btnBackActionPerformed(evt);
-			}
-		});
+        lblErrCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblErrCity.setForeground(new java.awt.Color(204, 0, 51));
+        lblErrCity.setText("errMessage");
 
-		jDeleteCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		jDeleteCity.setText("Delete");
-		jDeleteCity.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt)
-			{
-				jDeleteCityActionPerformed(evt);
-			}
-		});
+        btnBack.setBackground(new java.awt.Color(25, 118, 242));
+        btnBack.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("BACK");
+        btnBack.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
-		jUpdateCity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		jUpdateCity.setText("Update");
-		jUpdateCity.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt)
-			{
-				jUpdateCityActionPerformed(evt);
-			}
-		});
+        jUpdateCity.setBackground(new java.awt.Color(25, 118, 242));
+        jUpdateCity.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jUpdateCity.setForeground(new java.awt.Color(255, 255, 255));
+        jUpdateCity.setText("Update");
+        jUpdateCity.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        jUpdateCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUpdateCityActionPerformed(evt);
+            }
+        });
 
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGap(33, 33, 33)
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(jUpdateCity, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(jDeleteCity, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-						.addContainerGap(59, Short.MAX_VALUE)));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGap(55, 55, 55).addComponent(jDeleteCity)
-						.addGap(43, 43, 43).addComponent(jUpdateCity)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        jDeleteCity.setBackground(new java.awt.Color(25, 118, 242));
+        jDeleteCity.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jDeleteCity.setForeground(new java.awt.Color(255, 255, 255));
+        jDeleteCity.setText("Delete");
+        jDeleteCity.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        jDeleteCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDeleteCityActionPerformed(evt);
+            }
+        });
 
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-		this.setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup()
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-						.createSequentialGroup().addGap(180, 180, 180)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-								.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGroup(layout.createSequentialGroup().addComponent(jLabel2).addGap(28, 28, 28)
-										.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-												.addComponent(lblErrCity)
-												.addGroup(layout.createSequentialGroup()
-														.addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE,
-																207, javax.swing.GroupLayout.PREFERRED_SIZE)
-														.addPreferredGap(
-																javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(btnSubmit)))))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jPanel1,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-								Short.MAX_VALUE))
-						.addGroup(layout.createSequentialGroup().addGroup(layout
-								.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(layout.createSequentialGroup().addGap(277, 277, 277).addComponent(jLabel1))
-								.addGroup(layout.createSequentialGroup().addGap(41, 41, 41).addComponent(btnBack)))
-								.addGap(0, 0, Short.MAX_VALUE)))
-				.addContainerGap()));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup().addContainerGap().addComponent(jLabel1).addGap(49, 49, 49)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false).addGroup(layout
-						.createSequentialGroup()
-						.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150,
-								javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(55, 55, 55)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel2)
-								.addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnSubmit)))
-						.addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGap(18, 18, 18).addComponent(lblErrCity)
-				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-				.addComponent(btnBack).addGap(55, 55, 55)));
-	}// </editor-fold>//GEN-END:initComponents
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(354, 354, 354)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(166, 166, 166)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(158, 158, 158)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(28, 28, 28)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblErrCity))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jUpdateCity, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(31, 31, 31)
+                                        .addComponent(jDeleteCity, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(403, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jUpdateCity, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDeleteCity, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblErrCity))
+                .addGap(18, 18, 18)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(302, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
 
 	private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt)
 	{
@@ -341,27 +356,17 @@ public class ManageCity extends javax.swing.JPanel
                 
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JButton btnBack;
-
-	private javax.swing.JButton btnSubmit;
-
-	private javax.swing.JButton jDeleteCity;
-
-	private javax.swing.JLabel jLabel1;
-
-	private javax.swing.JLabel jLabel2;
-
-	private javax.swing.JPanel jPanel1;
-
-	private javax.swing.JScrollPane jScrollPane1;
-
-	private javax.swing.JButton jUpdateCity;
-
-	private javax.swing.JLabel lblErrCity;
-
-	private javax.swing.JTable tblCity;
-
-	private javax.swing.JTextField txtCity;
-	// End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton jDeleteCity;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton jUpdateCity;
+    private javax.swing.JLabel lblErrCity;
+    private javax.swing.JTable tblCity;
+    private javax.swing.JTextField txtCity;
+    // End of variables declaration//GEN-END:variables
 }
