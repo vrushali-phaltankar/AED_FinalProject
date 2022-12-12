@@ -94,8 +94,7 @@ Food standard admin will check the quality of the food.
 
 
 ## Class Diagram: 
-
-## Sequence Diagram: 
+![Class_Diagram](https://user-images.githubusercontent.com/114446858/206962379-e44067d4-ddd7-4b4f-951b-a1393c6f947c.jpg)
 
 
 ## Contributors:
