@@ -64,89 +64,58 @@ public class TypesOfFoodRestaurant extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btnBack1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("To Date");
+        setBackground(new java.awt.Color(25, 118, 242));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCalculate.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnCalculate.setText("View Results >>");
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("To Date :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, -1));
+
+        btnCalculate.setBackground(new java.awt.Color(25, 118, 242));
+        btnCalculate.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnCalculate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalculate.setText("RUN");
+        btnCalculate.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnCalculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalculateActionPerformed(evt);
             }
         });
+        add(btnCalculate, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 300, 106, 42));
 
         jDateChooser1.setFocusCycleRoot(true);
         jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 190, -1));
 
         jDateChooser2.setFocusCycleRoot(true);
         jDateChooser2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 240, 190, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("From Date");
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("From Date :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 171, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Types of Food donated by all the Commercial bodies in a date range");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 38, -1, 33));
 
-        btnBack1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnBack1.setText("<< Back");
+        btnBack1.setBackground(new java.awt.Color(25, 118, 242));
+        btnBack1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnBack1.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack1.setText("BACK");
+        btnBack1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnBack1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBack1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jLabel1)
-                .addGap(90, 90, 90))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel3))
-                        .addGap(103, 103, 103)
-                        .addComponent(btnCalculate))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel2))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(btnCalculate)))
-                .addGap(409, 409, 409)
-                .addComponent(btnBack1)
-                .addContainerGap())
-        );
+        add(btnBack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 17, 70, 30));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 900, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculateActionPerformed
@@ -222,5 +191,6 @@ public class TypesOfFoodRestaurant extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

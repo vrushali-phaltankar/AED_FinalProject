@@ -108,9 +108,15 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
         txtAdminName = new javax.swing.JTextField();
         lblErrCommunityName = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(25, 118, 242));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Manage Community Admin");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 6, -1, -1));
 
         tblCommunityAdmin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tblCommunityAdmin.setModel(new javax.swing.table.DefaultTableModel(
@@ -141,140 +147,92 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCommunityAdmin);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 96, 751, 101));
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Select Community: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
 
+        cboCommunity.setBackground(new java.awt.Color(25, 118, 242));
         cboCommunity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(cboCommunity, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 193, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("UserName");
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Username :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Password");
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Password :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
         txtUserName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 193, -1));
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 193, -1));
 
         lblErrUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrUsername.setForeground(new java.awt.Color(255, 0, 51));
         lblErrUsername.setText("errMessage");
+        add(lblErrUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, -1, -1));
 
         lblErrPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrPassword.setForeground(new java.awt.Color(255, 0, 51));
         lblErrPassword.setText("errMessage");
+        add(lblErrPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 320, -1, -1));
 
-        btnSubmit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSubmit.setBackground(new java.awt.Color(25, 118, 242));
+        btnSubmit.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
+        btnSubmit.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
+        add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 110, 40));
 
-        btnBack.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnBack.setText("<< Back");
+        btnBack.setBackground(new java.awt.Color(25, 118, 242));
+        btnBack.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("BACK");
+        btnBack.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 9, 70, 30));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Community Admin Name");
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Community Admin Name :");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
 
         txtAdminName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(txtAdminName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 193, -1));
 
         lblErrCommunityName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblErrCommunityName.setForeground(new java.awt.Color(255, 0, 51));
         lblErrCommunityName.setText("errMessage");
+        add(lblErrCommunityName, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Delete User");
+        jButton1.setBackground(new java.awt.Color(25, 118, 242));
+        jButton1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Delete");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(288, 288, 288)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(63, 63, 63)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSubmit)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtAdminName, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cboCommunity, javax.swing.GroupLayout.Alignment.LEADING, 0, 193, Short.MAX_VALUE)
-                                    .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblErrUsername)
-                                    .addComponent(lblErrPassword)
-                                    .addComponent(lblErrCommunityName)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(btnBack))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton1)))
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jButton1)))
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblErrUsername))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblErrPassword)))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblErrCommunityName))
-                .addGap(35, 35, 35)
-                .addComponent(btnSubmit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
-                .addComponent(btnBack)
-                .addGap(31, 31, 31))
-        );
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 120, 40));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 400, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -428,6 +386,7 @@ public class ManageCommunityAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblErrCommunityName;
     private javax.swing.JLabel lblErrPassword;
     private javax.swing.JLabel lblErrUsername;

@@ -191,44 +191,93 @@ private FoodManagementEnterprise enterprise;
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel12 = new javax.swing.JLabel();
         txtThresholdDays = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(25, 118, 242));
+        setForeground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Food Admin Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 6, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setText("Community Name");
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Community Name :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        cboCommuntiyName.setBackground(new java.awt.Color(25, 118, 242));
+        cboCommuntiyName.setForeground(new java.awt.Color(255, 255, 255));
+        cboCommuntiyName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboCommuntiyNameActionPerformed(evt);
+            }
+        });
+        add(cboCommuntiyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 99, 212, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel3.setText("Select Resident");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Select Resident :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+
+        cboResident.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboResidentActionPerformed(evt);
+            }
+        });
+        add(cboResident, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 206, 212, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Food Name:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel5.setText("Food Type");
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Food Type :");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel6.setText("Date of Purchase");
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Date of Purchase :");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 358, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel7.setText("Quantity");
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Quantity :");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel8.setText("Best Before");
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Best Before :");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel9.setText("Expiry Date");
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Expiry Date :");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, -1, -1));
+        add(txtFoodName, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 307, 120, -1));
 
+        cboFoodType.setBackground(new java.awt.Color(25, 118, 242));
+        cboFoodType.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cboFoodType.setForeground(new java.awt.Color(255, 255, 255));
         cboFoodType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboFoodTypeActionPerformed(evt);
             }
         });
+        add(cboFoodType, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 215, -1));
+        add(spnQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, 215, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Select type of Donator:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         buttonGroup1.add(rdnResident);
+        rdnResident.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        rdnResident.setForeground(new java.awt.Color(255, 255, 255));
         rdnResident.setText("Resident");
         rdnResident.setBorderPainted(true);
         rdnResident.addActionListener(new java.awt.event.ActionListener() {
@@ -236,8 +285,11 @@ private FoodManagementEnterprise enterprise;
                 rdnResidentActionPerformed(evt);
             }
         });
+        add(rdnResident, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 157, -1, -1));
 
         buttonGroup1.add(rdnRestaurant);
+        rdnRestaurant.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        rdnRestaurant.setForeground(new java.awt.Color(255, 255, 255));
         rdnRestaurant.setText("Restaturant");
         rdnRestaurant.setBorderPainted(true);
         rdnRestaurant.addActionListener(new java.awt.event.ActionListener() {
@@ -245,144 +297,53 @@ private FoodManagementEnterprise enterprise;
                 rdnRestaurantActionPerformed(evt);
             }
         });
+        add(rdnRestaurant, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 157, -1, -1));
 
+        cboBestBefore.setBackground(new java.awt.Color(25, 118, 242));
+        cboBestBefore.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cboBestBefore.setForeground(new java.awt.Color(255, 255, 255));
         cboBestBefore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboBestBeforeActionPerformed(evt);
             }
         });
+        add(cboBestBefore, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 415, 120, -1));
+        add(txtExpiryDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 215, -1));
 
+        btnCreateFood.setBackground(new java.awt.Color(25, 118, 242));
         btnCreateFood.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnCreateFood.setText("Create Food >>");
+        btnCreateFood.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreateFood.setText("Create Food");
+        btnCreateFood.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnCreateFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateFoodActionPerformed(evt);
             }
         });
+        add(btnCreateFood, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 191, 40));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel11.setText("Select Restaurant");
+        jLabel11.setFont(new java.awt.Font("SansSerif", 1, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Select Restaurant :");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
 
+        cboRestaurant.setBackground(new java.awt.Color(25, 118, 242));
+        cboRestaurant.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        cboRestaurant.setForeground(new java.awt.Color(255, 255, 255));
         cboRestaurant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboRestaurantActionPerformed(evt);
             }
         });
+        add(cboRestaurant, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 212, -1));
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 358, 120, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Threshold Days :");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel10)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel8))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(rdnResident)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                                        .addComponent(rdnRestaurant))
-                                    .addComponent(cboCommuntiyName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cboResident, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cboRestaurant, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addComponent(txtThresholdDays, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(379, 379, 379)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtFoodName)
-                            .addComponent(cboBestBefore, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel9))
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(spnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboFoodType, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtExpiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(224, 224, 224)
-                        .addComponent(btnCreateFood, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(258, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cboCommuntiyName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(rdnResident)
-                    .addComponent(rdnRestaurant))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(cboResident, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(cboRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtThresholdDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtFoodName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(cboFoodType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(spnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(cboBestBefore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtExpiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addComponent(btnCreateFood, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        add(txtThresholdDays, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 260, 119, -1));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 350, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateFoodActionPerformed
@@ -501,6 +462,14 @@ private FoodManagementEnterprise enterprise;
         // TODO add your handling code here:
     }//GEN-LAST:event_cboRestaurantActionPerformed
 
+    private void cboResidentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboResidentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboResidentActionPerformed
+
+    private void cboCommuntiyNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCommuntiyNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboCommuntiyNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateFood;
@@ -523,6 +492,7 @@ private FoodManagementEnterprise enterprise;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton rdnResident;
     private javax.swing.JRadioButton rdnRestaurant;
     private javax.swing.JSpinner spnQuantity;
