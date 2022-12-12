@@ -31,8 +31,8 @@ public class EnterpriseDirectory {
             enterprise = new FoodManagementEnterprise(name);
             enterpriseArrayList.add(enterprise);
         }
-        else if (type == Enterprise.EnterpriseType.WasteDisposal){
-            enterprise = new WasteDisposalEnterprise(name);
+        else if (type == Enterprise.EnterpriseType.FoodProviderManagement){
+            enterprise = new FoodProviderManagementEnterprise(name);
             enterpriseArrayList.add(enterprise);
         }
         else if (type == Enterprise.EnterpriseType.TransportManagement){

@@ -5,7 +5,11 @@
 package Interface.SystemAdminWorkArea;
 
 import Business.City.City;
+import Business.Community.Community;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.FoodManagementEnterprise;
+import Interface.FoodEnterpriseAdminWorkArea.ManageCommunity;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -18,6 +22,7 @@ public class UpdateValue extends javax.swing.JFrame {
 
     private Object object;
     private EcoSystem system;
+    private FoodManagementEnterprise foodManagementEnterprise;
     private Object classType;
     /**
      * Creates new form UpdateValue
@@ -26,9 +31,10 @@ public class UpdateValue extends javax.swing.JFrame {
         initComponents();
     }
     
-    public UpdateValue(Object object, EcoSystem system, Object classType) {
+    public UpdateValue(Object object, EcoSystem system, FoodManagementEnterprise foodManagementEnterprise, Object classType) {
         this.object = object;
         this.system = system;
+        this.foodManagementEnterprise = foodManagementEnterprise;
         this.classType = classType;
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -150,6 +156,47 @@ public class UpdateValue extends javax.swing.JFrame {
                 ((ManageCity)classType).populateCityTable();
             }
         }
+        
+        else if(object instanceof Community)
+        {
+            Pattern p = Pattern.compile("^[a-zA-Z\\s]+");
+            Matcher m = p.matcher(newValue);  
+            if(!m.matches())
+            {
+                JOptionPane.showMessageDialog(null, "Invalid community Name");
+			return;
+            }
+            
+            Community existingCommunity = (Community)object;
+            
+            if (null != foodManagementEnterprise.getCommunityArrayList() && !foodManagementEnterprise.getCommunityArrayList().isEmpty())
+		{
+                        for (Community community : foodManagementEnterprise.getCommunityArrayList())
+			{
+				if (newValue.equalsIgnoreCase(community.getCommunityName()))
+				{
+                                    JOptionPane.showMessageDialog(null, "Community Already Exist in System");
+                                    return;
+				}
+			}
+                    
+			for (Community community : foodManagementEnterprise.getCommunityArrayList())
+			{
+				if (existingCommunity.getCommunityName().equalsIgnoreCase(community.getCommunityName()))
+				{
+					community.setCommunityName(newValue);
+                                        break;
+				}
+			}
+		}
+            JOptionPane.showMessageDialog(null, "Community Updated Successfully");
+		
+            if(classType instanceof ManageCommunity)
+            {
+                ((ManageCommunity)classType).populateTable();
+            }
+        }
+        
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -12,11 +12,11 @@ import java.util.ArrayList;
  *
  * @author vrushaliphaltankar
  */
-public class WasteDisposalEnterprise extends Enterprise{
+public class FoodProviderManagementEnterprise extends Enterprise{
     
-    public WasteDisposalEnterprise(String name){
+    public FoodProviderManagementEnterprise(String name){
         
-        super(name,EnterpriseType.WasteDisposal);
+        super(name,EnterpriseType.FoodProviderManagement);
         
     }
 

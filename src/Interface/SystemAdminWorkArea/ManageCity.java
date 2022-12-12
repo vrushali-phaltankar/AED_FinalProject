@@ -352,7 +352,7 @@ public class ManageCity extends javax.swing.JPanel
 			}
 		}
 
-		new UpdateValue(tempCity,system,this).setVisible(true);
+		new UpdateValue(tempCity,system,null,this).setVisible(true);
                 
 	}
 

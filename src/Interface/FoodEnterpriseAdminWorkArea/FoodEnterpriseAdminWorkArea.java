@@ -43,53 +43,40 @@ private Enterprise enterprise;
         jLabel1 = new javax.swing.JLabel();
         btnManageCommunity = new javax.swing.JButton();
         btnManageCommunityAdmin = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        setBackground(new java.awt.Color(25, 118, 242));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Food Enterprise Admin Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 47, -1, -1));
 
-        btnManageCommunity.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnManageCommunity.setText("Manage Community >>");
+        btnManageCommunity.setBackground(new java.awt.Color(25, 118, 242));
+        btnManageCommunity.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnManageCommunity.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageCommunity.setText("Manage Community");
+        btnManageCommunity.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnManageCommunity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageCommunityActionPerformed(evt);
             }
         });
+        add(btnManageCommunity, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 186, 353, 54));
 
-        btnManageCommunityAdmin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnManageCommunityAdmin.setText("Manage Community Admin >>");
+        btnManageCommunityAdmin.setBackground(new java.awt.Color(25, 118, 242));
+        btnManageCommunityAdmin.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnManageCommunityAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageCommunityAdmin.setText("Manage Community Admin");
+        btnManageCommunityAdmin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         btnManageCommunityAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageCommunityAdminActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnManageCommunity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnManageCommunityAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE))))
-                .addContainerGap(499, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(62, 62, 62)
-                .addComponent(btnManageCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(btnManageCommunityAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(351, Short.MAX_VALUE))
-        );
+        add(btnManageCommunityAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 329, 353, 52));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 480, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCommunityActionPerformed
@@ -114,5 +101,6 @@ private Enterprise enterprise;
     private javax.swing.JButton btnManageCommunity;
     private javax.swing.JButton btnManageCommunityAdmin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

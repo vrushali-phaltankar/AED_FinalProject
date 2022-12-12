@@ -63,18 +63,18 @@ public class ConfigureASystem {
         
   
         //Create Community
-        Community fenway = fdm.addCommunity("fenway");
+        Community Boylston = fdm.addCommunity("Boylston");
       // Populator populator = new PopulatorBuilder().build();
                        
-        Employee few1 = fenway.getCommunityOrganization().getEmployeeDirectory().createEmployee("FEW1",fenway,new CommunityAdminEmployee() );
-        Employee fcs = fenway.getFoodCollectionOrganization().getEmployeeDirectory().createEmployee("fcs",fenway, new FoodCollectionSupervisorEmployee());
-        Employee fcd = fenway.getFoodCollectionOrganization().getEmployeeDirectory().createEmployee("fcd",fenway, new FoodCollectionDriverEmployee());
-        Employee fds =  fenway.getFoodDistributionOrganization().getEmployeeDirectory().createEmployee("fds",fenway, new FoodDistributionSupervisorEmployee());
-        Employee fss =  fenway.getFoodStandardOrganization().getEmployeeDirectory().createEmployee("fss",fenway, new FoodStandardSupervisorEmployee());
-        Employee resident1 = fenway.getResidentOrganization().getEmployeeDirectory().createEmployee("gauri", fenway, new ResidentEmployee());
+        Employee few1 = Boylston.getCommunityOrganization().getEmployeeDirectory().createEmployee("FEW1",Boylston,new CommunityAdminEmployee() );
+        Employee fcs = Boylston.getFoodCollectionOrganization().getEmployeeDirectory().createEmployee("fcs",Boylston, new FoodCollectionSupervisorEmployee());
+        Employee fcd = Boylston.getFoodCollectionOrganization().getEmployeeDirectory().createEmployee("fcd",Boylston, new FoodCollectionDriverEmployee());
+        Employee fds =  Boylston.getFoodDistributionOrganization().getEmployeeDirectory().createEmployee("fds",Boylston, new FoodDistributionSupervisorEmployee());
+        Employee fss =  Boylston.getFoodStandardOrganization().getEmployeeDirectory().createEmployee("fss",Boylston, new FoodStandardSupervisorEmployee());
+        Employee resident1 = Boylston.getResidentOrganization().getEmployeeDirectory().createEmployee("gauri", Boylston, new ResidentEmployee());
         resident1.setAddress("125 Park Drive, Boston, MA 02115");
         resident1.setEmailID("gauripatil@gmail.com");        
-        Employee restaurant1 = fenway.getRestaurantOrganization().getEmployeeDirectory().createEmployee("mumbai spice", fenway, new RestaurantEmployee());
+        Employee restaurant1 = Boylston.getRestaurantOrganization().getEmployeeDirectory().createEmployee("mumbai spice", Boylston, new RestaurantEmployee());
         restaurant1.setAddress("251 Massachusetts Ave, Boston, MA 02115");
         restaurant1.setEmailID("phaltankarvrushali@gmail.com");
 
@@ -82,13 +82,13 @@ public class ConfigureASystem {
         ((FoodCollectionDriverEmployee) fcd).setDriverCurrentAddress("44 Germain St, Boston, MA 02115");
         
         //UserAcc        
-        fenway.getCommunityOrganization().getUserAccountDirectory().createUserAccount("few1", "few1", few1, new CommunityAdminRole());
-        fenway.getFoodCollectionOrganization().getUserAccountDirectory().createUserAccount("fcs", "fcs", fcs, new FoodCollectionAdminRole());
-        fenway.getFoodCollectionOrganization().getUserAccountDirectory().createUserAccount("fcd", "fcd", fcd, new FoodCollectionDriverRole());
-        fenway.getFoodDistributionOrganization().getUserAccountDirectory().createUserAccount("fds", "fds", fds, new FoodDistributionAdminRole());
-        fenway.getFoodStandardOrganization().getUserAccountDirectory().createUserAccount("fss", "fss", fss, new FoodStandardAdminRole());
-        fenway.getResidentOrganization().getUserAccountDirectory().createUserAccount("gauri", "gauri", resident1, new ResidentRole());
-        fenway.getRestaurantOrganization().getUserAccountDirectory().createUserAccount("spice", "spice", restaurant1, new RestuarantRole());
+        Boylston.getCommunityOrganization().getUserAccountDirectory().createUserAccount("few1", "few1", few1, new CommunityAdminRole());
+        Boylston.getFoodCollectionOrganization().getUserAccountDirectory().createUserAccount("fcs", "fcs", fcs, new FoodCollectionAdminRole());
+        Boylston.getFoodCollectionOrganization().getUserAccountDirectory().createUserAccount("fcd", "fcd", fcd, new FoodCollectionDriverRole());
+        Boylston.getFoodDistributionOrganization().getUserAccountDirectory().createUserAccount("fds", "fds", fds, new FoodDistributionAdminRole());
+        Boylston.getFoodStandardOrganization().getUserAccountDirectory().createUserAccount("fss", "fss", fss, new FoodStandardAdminRole());
+        Boylston.getResidentOrganization().getUserAccountDirectory().createUserAccount("gauri", "gauri", resident1, new ResidentRole());
+        Boylston.getRestaurantOrganization().getUserAccountDirectory().createUserAccount("spice", "spice", restaurant1, new RestuarantRole());
      
         FridgeSimulation simulator = new FridgeSimulation();
         createFoodForEmployee(simulator,5,resident1);
