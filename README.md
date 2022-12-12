@@ -3,7 +3,8 @@
 ## Project Description
 This is a Java Swing application for Food donation system.
 
-Project description: This project is to manage data for a food donation system where the system admin can create various users(admins) can perform various operations on that data. The purpose of this project is to manage the data of a Food Inventory efficiently.
+## Food Donation System
+This project is to manage data for a food donation system where the system admin can create various users(admins) can perform various operations on that data. The purpose of this project is to manage the data of a Food Inventory efficiently.
 This application will involve communication between enterprises such as Food Collection Agency, Food Standard Agency, Food Distribution Agency and Waste Management Agency. These agencies will include roles such as administrator, food collector, food distributor, resident, commercial body and waste collector role.
 
 ## Features
