@@ -39,7 +39,7 @@ public abstract class Enterprise extends Organization {
     public enum EnterpriseType {
         
         FoodManagement("FoodManagement"),
-        WasteDisposal("WasteManagement"),
+        FoodProviderManagement("FoodProviderManagement"),
         TransportManagement("TransportManagement"),
         FoodQualityManagement("FoodQualityManagement");
         
